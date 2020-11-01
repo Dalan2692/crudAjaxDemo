@@ -1,0 +1,120 @@
+<tab_block th:fragment="tab_block (role, roles, newUser, user, userList)"   xmlns:th="http://www.thymeleaf.org">
+    <div class="tab_heading_block">
+        <div >
+            <p class="tab_block_heading">Admin panel</p>
+               <ul class="tabs">
+                  <li>
+                     <input type="radio" name="tabs" id="tab-1" checked>
+                     <label for="tab-1">Users table</label>
+                     <div class="tab-content">
+                         <p class="table_annotation">All users</p>
+                         <div class="table">
+                            <div class="table_row">
+                                <div class="table_theme">ID</div>
+                                <div class="table_theme">First Name</div>
+                                <div class="table_theme">Last Name</div>
+                                <div class="table_theme">Age</div>
+                                <div class="table_theme">Email</div>
+                                <div class="table_theme">Role</div>
+                                <div class="table_theme">Edit</div>
+                                <div class="table_theme">Delete</div>
+                            </div>
+                            <div th:each="user : ${userList}" class="table_row">
+                                <div th:text="${user.getId()}" class="table_td"></div>
+                                <div th:text="${user.getUsername()}" class="table_td"></div>
+                                <div th:text="${user.getSurname()}" class="table_td"></div>
+                                <div th:text="${user.getAge()}" class="table_td"></div>
+                                <div th:text="${user.getEmail()}" class="table_td"></div>
+                                <div th:if="${user.isAdmin()}==true" class="table_td">ROLE ADMIN</div>
+                                <div th:if="${user.isAdmin()}==false" class="table_td">USER</div>
+                                <div class="table_td">
+                                    <a th:href="@{admin/edit/{id}(id=${user.getId()})}" class="table_btn_edit">Edit</a>
+                                </div>
+                                <div class="table_td">
+                                    <a th:href="@{admin/delete/{id}(id=${user.getId()})}" class="table_btn_red">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <input type="radio" name="tabs" id="tab-2">
+                     <label for="tab-2">New User</label>
+                     <div class="tab-content">
+                        <p class="table_annotation">Add new user</p>
+                        <div class="table">
+                            <div class="form_wrapper">
+                                <div class="form_block">
+                                    <form action="#" th:action="@{/admin}" th:object="${newUser}" method="post">
+                                         <label for="First name" class="form_input_name">First name</label>
+                                         <input type="text" th:field="*{username}" class="form_input"/>
+
+                                         <label for="Last name" class="form_input_name">Last name</label>
+                                         <input type="text" th:field="*{surname}"class="form_input"/>
+
+                                         <label for="Email"  class="form_input_name">Email</label>
+                                         <input type="text" th:field="*{email}"class="form_input"/>
+
+                                         <label for="Age"  class="form_input_name">Age</label>
+                                         <input type="text" th:field="*{age}"class="form_input"/>
+
+                                         <label for="Age"  class="form_input_name">Password</label>
+                                         <input type="text" th:field="*{password}"class="form_input"/>
+
+                                         <label for="Role" class="form_input_name" >Role</label>
+                                         <td th:object="${role}">
+
+                                            <select th:field="*{role}" class="form_select">
+                                                <option value=""> select role </option>
+                                                <option th:each="type : ${roles}"
+                                                        th:value="${type.getRole()}"
+                                                        th:text="${type.getRole()}">
+                                                </option>
+                                            </select>
+
+                                         </td>
+                                         <input type="submit" value="Add new user" class="form_submit">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+        </div>
+    </div>
+</tab_block>
+
+
+
+
+<!--<table th:fragment="table (user, userList)" th:width="275" border="1" style="float: left" xmlns:th="http://www.thymeleaf.org">-->
+<!--    <div class="table_heading_block">-->
+<!--        <span th:if="${user.isAdmin()}==true" class="table_heading">Admin panel</span>-->
+<!--        <span th:if="${user.isAdmin()}==false" class="table_heading">User information-info</span>-->
+<!--    </div>-->
+<!--    <tr>-->
+<!--        <th>id</th>-->
+<!--        <th>name</th>-->
+<!--        <th>surname</th>-->
+<!--        <th>password</th>-->
+<!--        <th>role</th>-->
+<!--        <th>edit</th>-->
+<!--        <th>delete</th>-->
+<!--    </tr>-->
+<!--    <tr th:each="user : ${userList}">-->
+<!--        <td th:text="${user.getId()}"></td>-->
+<!--        <td th:text="${user.getUsername()}"></td>-->
+<!--        <td th:text="${user.getSurname()}"></td>-->
+<!--        <td th:text="${user.getPassword()}"></td>-->
+<!--        <td th:each="a : ${user.getRoles()}">-->
+<!--            <div th:text="${a.getRole()}"></div>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <a th:href="@{admin/edit/{id}(id=${user.getId()})}">Edit</a>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <a th:href="@{admin/delete/{id}(id=${user.getId()})}">Delete</a>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--</table>-->

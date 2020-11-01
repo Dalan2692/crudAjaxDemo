@@ -1,0 +1,288 @@
+
+.tab_heading_block{
+    display: flex;
+    justify-content: start;
+    padding-top: 20px;
+    padding-left: 25px;
+
+}
+
+.tab_block_heading {
+    color: #000000;
+    font-size: 35px;
+    padding-bottom: 20px;
+
+}
+
+
+.tabs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+}
+.tabs:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 240px;
+}
+.tabs li {
+    float: left;
+}
+.tabs li > input {
+    display: none;
+}
+.tabs li > label {
+    display: inline-block;
+    color:#0062cc ;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-radius: 6px 6px 1px 1px;
+    height: 40px;
+    line-height: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.tabs li:last-child > label {
+    border-right-width: 1px;
+}
+.tabs .tab-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    border: 1px solid #ccc;
+    /*height: 200px;*/
+    overflow-y: auto;
+    border-radius: 3px;
+    width: auto;
+    height: auto;
+}
+
+/* Функциональность: */
+
+.tabs li > input:checked + label {
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    color: #000000;
+
+}
+.tabs li > input:checked ~ .tab-content {
+    display: block;
+}
+
+.table_annotation {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    border-bottom: 1px solid #cccccc;
+}
+
+
+
+.table {
+
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+}
+
+
+
+.table_row {
+    display: flex;
+    justify-content: start;
+    padding: 20px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.table_row:first-child {
+    border-top: 1px solid #cccccc;
+}
+
+.table_row:last-child {
+    border-bottom: none;
+}
+
+.table_row:nth-child(even) {
+    background: #f8f9fa;
+    padding-bottom: 10px;
+}
+.table_row:nth-child(odd) {
+    background: #FFF;
+}
+
+
+
+
+.table_theme {
+    width: 140px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.table_theme:first-child {
+    width: 80px;
+}
+
+.table_theme:nth-child(4) {
+    width: 80px;
+}
+
+.table_theme:nth-child(5) {
+    width: 170px;
+}
+
+.table_theme:nth-child(7) {
+    width: 80px;
+}
+.table_theme:last-child {
+   width: 100px;
+}
+
+
+
+
+
+.table_td {
+    text-align: left;
+    width: 140px;
+}
+
+.table_td:first-child {
+    width: 80px;
+}
+
+.table_td:nth-child(4) {
+    width: 80px;
+}
+
+.table_td:nth-child(5) {
+    width: 170px;
+}
+.table_td:nth-child(7) {
+    width: 80px;
+}
+
+.table_td:last-child {
+    width: 50px;
+}
+
+
+
+.table_btn_edit {
+    display: inline-block;
+    padding: 7px;
+    background-color: #17a2b8;
+    color: #FFFFFF;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 12px;
+
+}
+
+.table_btn_red {
+    display: inline-block;
+    padding: 7px;
+    background-color: #dc3545;
+    color: #FFFFFF;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+.form_wrapper {
+    width: 971px;
+    height: 370px;
+
+}
+.form_block {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.form_select {
+    outline: none;
+    border-radius: 5px;
+}
+.form_select:focus {
+    outline: none;
+    border: 4px solid #007bff ;
+}
+
+
+.form_input_name {
+    font-weight: bold;
+    display: block;
+    padding-top: 15px;
+}
+
+
+
+.form_input_name :first-child{
+    padding-top: 10px;
+
+}
+
+
+.form_input {
+    display: block;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    height: 25px;
+    width: 230px;
+
+}
+
+.form_input:focus {
+    outline: none;
+    border: 3px solid #007bff ;
+
+}
+
+.form_submit {
+    display: block;
+    color: #FFFFFF;
+    background-color: #28a745;
+    border-radius: 3px;
+    margin-top: 15px;
+    position: absolute;
+    padding: 5px;
+    left: 45%;
+    cursor: pointer;
+}
+
+
+
+/*USER PAGE STYLE*/
+.user-content {
+    margin-left: 20px;
+    width: 70%;
+
+}
+
+.table_annotation_wrapper{
+    width: 100%;
+    border-top: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-radius: 3px;
+
+}

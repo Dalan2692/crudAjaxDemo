@@ -1,0 +1,37 @@
+
+.header{
+    width: auto;
+    height: 50px;
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+.header_user_info {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.header_user_mail {
+    display: inline-block;
+
+    font-weight: bold;
+}
+
+.header_user_role {
+
+    text-transform: uppercase;
+}
+
+.header_logout {
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.header_logout_link {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #dae0e5;
+
+}

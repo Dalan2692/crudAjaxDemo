@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div th:fragment="new_user"  xmlns:th="http://www.thymeleaf.org">-->
+<!--    <form  th:method="POST" th:action="@{admin/sendUser}" th:object="${user}">-->
+
+<!--        <input type="hidden" name="id" th:value="${user.getId()}">-->
+
+<!--        <label for="name">name</label>-->
+
+<!--        <input type="text" th:field="*{username}" id="name">-->
+
+<!--        <label for="surname">surname</label>-->
+
+<!--        <input type="text" th:field="*{surname}" id="surname">-->
+
+<!--        <label for="password">password</label>-->
+
+<!--        <input type="text" th:field="*{password}"   id="password">-->
+
+
+<!--        <label>role</label>-->
+<!--        <td th:object="${roleObj}">-->
+<!--            <select th:field="*{role}">-->
+<!--                <option value=""> select role </option>-->
+<!--                <option th:each="type : ${roleSet}"-->
+<!--                        th:value="${type.getAuthority()}"-->
+<!--                        th:text="${type.getAuthority()}">-->
+<!--                </option>-->
+<!--            </select>-->
+<!--        </td>-->
+<!--        <input type="submit" value="Add user">-->
+<!--    </form>-->
+<!--</div>-->
+
+<!--<button >-->
+<!--    <a th:href="@{/logout}">logout</a>-->
+<!--</button>-->
+
+<!--</body>-->
+<!--</html>-->

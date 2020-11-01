@@ -1,0 +1,13 @@
+<div th:fragment="left_nav (user)" class="left_nav" xmlns:th="http://www.thymeleaf.org">
+    <ul class="left_nav_list">
+        <span th:switch="${user.isAdmin()}">
+            <p th:case="true">
+                <li class="left_nav_item"><a th:href="@{/admin}" class="left_nav_link">Admin</a></li>
+                <li class="left_nav_item"><a th:href="@{/user}" class="left_nav_link">User</a></li>
+            </p>
+            <p th:case="false">
+                <li class="left_nav_item"><a href="" class="left_nav_link">User</a></li>
+            </p>
+        </span>
+    </ul>
+</div>

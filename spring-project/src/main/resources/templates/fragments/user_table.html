@@ -1,0 +1,29 @@
+<div th:fragment="user_table (user)" xmlns:th="http://www.thymeleaf.org">
+
+    <div class="tab_heading_block">
+        <p class="tab_block_heading">User information-page</p>
+    </div>
+    <div class="user-content">
+        <div class="table_annotation_wrapper"><p class="table_annotation">About user</p></div>
+        <div class="table">
+            <div class="table_row">
+                <div class="table_theme">ID</div>
+                <div class="table_theme">First Name</div>
+                <div class="table_theme">Last Name</div>
+                <div class="table_theme">Age</div>
+                <div class="table_theme">Email</div>
+                <div class="table_theme">Role</div>
+            </div>
+            <div class="table_row">
+                <div th:text="${user.getId()}" class="table_td">ID</div>
+                <div th:text="${user.getUsername()}" class="table_td">First Name</div>
+                <div th:text="${user.getSurname()}" class="table_td">Last Name</div>
+                <div class="table_td">30</div>
+                <div th:text="${user.getEmail()}" class="table_td">Email</div>
+                <div class="table_td">ROLE USER</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
