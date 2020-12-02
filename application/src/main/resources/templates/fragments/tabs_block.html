@@ -1,0 +1,181 @@
+
+<div th:fragment="tabs_block" xmlns:th="http://www.thymeleaf.org" class="tabs_block" style="width: 95%">
+    <ul class="nav nav-tabs" id="myTab" role="tablist" >
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Users table</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">New User</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent" style="border-bottom: 1px #cccccc solid;border-left: 1px #cccccc solid; border-right: 1px solid #cccccc">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <nav aria-label="breadcrumb" style=" background-color: #f8f9fa; padding:10px 10px 10px 10px ; border-bottom: 1px solid #cccccc">
+                <h4>All users</h4>
+            </nav>
+            <div id="table_users" class="table-content" style="background-color: #ffffff; padding: 20px">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="table_body">
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- Modal DELETE-->
+            <div class="modal fade" id="delete-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog" id="delete_modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Delete User</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form_delete_user">
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_delete_user_id" style="font-weight: bold">ID</label>
+                                    <input type="text" class="form-control" id="form_delete_user_id" readonly>
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_delete_user_first_name" style="font-weight: bold">First Name</label>
+                                    <input type="text" class="form-control" id="form_delete_user_first_name" aria-describedby="emailHelp" readonly>
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_delete_user_last_name" style="font-weight: bold">Last Name</label>
+                                    <input type="text" class="form-control" id="form_delete_user_last_name" readonly >
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_delete_user_age" style="font-weight: bold">Age</label>
+                                    <input type="text" class="form-control" id="form_delete_user_age" readonly>
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_delete_user_username" style="font-weight: bold">Email</label>
+                                    <input type="email" class="form-control" id="form_delete_user_username"readonly >
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_delete_user_role" style="font-weight: bold">Role</label>
+                                    <input type="text" class="form-control" id="form_delete_user_role" readonly>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="modal_delete_btn" data-dismiss="modal">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal EDIT-->
+            <div class="modal fade" id="edit-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog" id="edit_modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel1">Edit User</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form_delete_user">
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_edit_user_id" style="font-weight: bold">ID</label>
+                                    <input type="text" class="form-control" id="form_edit_user_id" readonly>
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_edit_user_first_name" style="font-weight: bold">First Name</label>
+                                    <input type="text" class="form-control" id="form_edit_user_first_name" aria-describedby="emailHelp">
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_edit_user_last_name" style="font-weight: bold">Last Name</label>
+                                    <input type="text" class="form-control" id="form_edit_user_last_name">
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_edit_user_age" style="font-weight: bold">Age</label>
+                                    <input type="text" class="form-control" id="form_edit_user_age">
+                                </div>
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_edit_user_username" style="font-weight: bold">Email</label>
+                                    <input type="email" class="form-control" id="form_edit_user_username">
+                                </div>
+
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_edit_user_password" style="font-weight: bold">Password</label>
+                                    <input type="password" class="form-control" id="form_edit_user_password">
+                                </div>
+
+                                <div class="form-group" style="text-align: center">
+                                    <label for="form_edit_user_role" style="font-weight: bold">Role</label>
+                                    <select class="form-control" id="form_edit_user_role">
+
+                                    </select>
+                                </div>
+
+
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="modal_edit_btn" data-dismiss="modal">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <nav aria-label="breadcrumb" style=" background-color: #f8f9fa;padding:10px 10px 10px 10px; border-bottom: 1px #cccccc solid">
+                <h4>New user</h4>
+            </nav>
+            <div class="form-content" style="background-color: #fff; width: 100%">
+                <form class="form_add_user">
+                    <div class="form-group" style="text-align: center">
+                        <label for="form_add_user_firstName" style="font-weight: bold">First Name</label>
+                        <input type="text" class="form-control" id="form_add_user_firstName" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group" style="text-align: center">
+                        <label for="form_add_user_lastName" style="font-weight: bold">Last Name</label>
+                        <input type="text" class="form-control" id="form_add_user_lastName">
+                    </div>
+                    <div class="form-group" style="text-align: center">
+                        <label for="form_add_user_age" style="font-weight: bold">Age</label>
+                        <input type="text" class="form-control" id="form_add_user_age">
+                    </div>
+                    <div class="form-group" style="text-align: center">
+                        <label for="form_add_user_username" style="font-weight: bold">Email</label>
+                        <input type="email" class="form-control" id="form_add_user_username">
+                    </div>
+                    <div class="form-group" style="text-align: center">
+                        <label for="form_add_user_password" style="font-weight: bold">Password</label>
+                        <input type="password" class="form-control" id="form_add_user_password">
+                    </div>
+                    <div class="form-group" style="text-align: center">
+                        <label for="form_add_user_role" style="font-weight: bold">Role</label>
+                        <select class="form-control" id="form_add_user_role">
+
+                        </select>
+                    </div>
+
+                    <button id="btn_add_new_user" type="submit" class="btn btn-primary" style= "display: inline-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

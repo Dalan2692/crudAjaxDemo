@@ -1,0 +1,14 @@
+.content {
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+}
+.form-content{
+    padding: 25px;
+}
+
+.form_add_user {
+    margin: 0 auto;
+    width: 400px;
+
+}

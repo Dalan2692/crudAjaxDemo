@@ -1,0 +1,18 @@
+@import "fragments/topLine.css";
+@import "fragments/leftNav.css";
+@import "fragments/content.css";
+/*@import "fragments/form_login.css";*/
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+.col-md-2, .col-md-10 {
+    padding: 0;
+    margin: 0;
+}
+.content {
+    background-color: #f8f9fa;
+}
+
+

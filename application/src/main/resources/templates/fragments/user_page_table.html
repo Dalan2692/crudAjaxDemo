@@ -1,0 +1,46 @@
+<div class="user_page_table" th:fragment="user_page_table" xmlns:th="http://www.thymeleaf.org" style="width: 95%;">
+    <nav aria-label="breadcrumb" style=" background-color: #f8f9fa; padding:10px 10px 10px 10px ; border-bottom: 1px solid #cccccc">
+        <h4>About user</h4>
+    </nav>
+    <div id="table_users" class="table-content" style="background-color: #ffffff; padding: 20px">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+
+            </tr>
+            </thead>
+            <tbody id="table_body">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function () {
+            let authResponse = JSON.parse(localStorage.getItem('authResponse'))
+            let roles = authResponse.roles;
+            let role;
+
+            $.each(roles, (i ,item) => {
+                role = (item.role === 'ROLE_ADMIN') ? 'ADMIN' : 'USER'
+            })
+
+            let tableRow =
+                '<tr>' +
+                    '<td>'+authResponse.id+'</td>'+
+                    '<td>'+authResponse.firstName+'</td>'+
+                    '<td>'+authResponse.lastName+'</td>'+
+                    '<td>'+authResponse.age+'</td>'+
+                    '<td>'+authResponse.username+'</td>'+
+                    '<td>'+role+'</td>'+
+                '</tr>';
+
+            $('#table_body').append(tableRow);
+        })
+    </script>
+</div>

@@ -1,0 +1,19 @@
+.top_line_username {
+    color: #ffffff;
+    font-size: 20px;
+}
+.top_line_role {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.top_line_text {
+    padding-left: 5px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.top_line_logout {
+    color: #cccccc;
+    font-size: 16px;
+    cursor: pointer;
+}

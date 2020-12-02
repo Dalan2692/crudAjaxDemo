@@ -1,0 +1,31 @@
+
+server:
+  port: 8189
+  servlet:
+    context-path: /
+
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      show-sql: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/remake
+    username: root
+    password: prosto4ok
+
+  devtools:
+    livereload:
+      port: 35729
+      enabled: true
+
+
+
+
+
+
